@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:replace="__fragments :: head">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>首页</title>
+</head>
+
+<body>
+
+    <!--导航栏-->
+    <nav th:replace="__fragments :: menu(1)"></nav>
+
+    <!--主页-->
+    <div class="blog-container index-footer-big">
+        <div class="ui container">
+            <div class="ui stackable grid">
+                <!--左列表-->
+                <div class="eleven wide column">
+                    <!--头-->
+                    <div class="ui top attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <h3 class="ui teal header">文章</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <!--中-->
+                    <div class="ui attached segment">
+                        <div class="ui padded vertical segment">
+                            <div class="ui grid">
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://pic1.zhimg.com/50/v2-5e39fc2bd7f7b826dc81b7106b009f5c_hd.jpg" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">了都</h3>
+                                    <p>dddddddddddd</p>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui mini horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://cache.cswsadlab.com/wp-content/uploads/2015/03/笑颜1-150x150.jpg" alt="" class="ui avatar image">
+                                                    <div class="content">草</div>
+                                                        <i class="calender icon"></i>2017-10-01
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">标签</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+
+                        </div>
+                        <div class="ui padded vertical segment">
+                            <div class="ui grid">
+                                <div class="five wide column">
+                                    <a href="#" target="_blank">
+                                        <img src="https://pic1.zhimg.com/50/v2-5e39fc2bd7f7b826dc81b7106b009f5c_hd.jpg" alt="" class="ui rounded image">
+                                    </a>
+                                </div>
+
+                                <div class="eleven wide column">
+                                    <h3 class="ui header">了都</h3>
+                                    <p>dddddddddddd</p>
+                                    <div class="ui grid">
+                                        <div class="eleven wide column">
+                                            <div class="ui horizontal link list">
+                                                <div class="item">
+                                                    <img src="https://cache.cswsadlab.com/wp-content/uploads/2015/03/笑颜1-150x150.jpg" alt="" class="ui avatar image">
+                                                    <div class="content">草</div>
+                                                        <i class="calender icon"></i>2017-10-01
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="five wide column">
+                                            <a href="#" target="_blank" class="ui teal basic label">标签</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br><br>
+                        </div>
+
+                    </div>
+
+                    <!--底-->
+                    <div class="ui bottom attached segment">
+                        <div class="ui middle aligned two column grid">
+                            <div class="column">
+                                <a href="#" class="ui mini teal basic button">上一页</a>
+                            </div>
+                            <div class="right aligned column">
+                                <a href="3" class="ui mini teal basic button">下一页</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    </div>
+                
+                <!--右导航-->
+                <div class="five wide column">
+                    <!--右分类-->
+                    <div class="ui segment">
+                        <div class="ui teal secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="th large icon"></i>分类
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="" target="_blank">更多<i class="angle double right icon"></i></a>
+                                </div>
+                                <div class="ui fluid vertical menu">
+                                    <a href="#" class="item">
+                                        学习日志
+                                        <div class="ui label">13</div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--右常用-->
+                    <div class="ui segment index-top-large">
+                        <div class="ui teal secondary segment">
+                            <div class="ui two column grid">
+                                <div class="column">
+                                    <i class="th large icon"></i>常看
+                                </div>
+                                <div class="right aligned column">
+                                    <a href="#" target="_blank">更多<i class="angle double right icon"></i></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--右最近访问-->
+                    <div class="ui segment index-top-large">
+                        <div class="ui attached secondary segment">
+                            <i class="bookmark icon"></i>最近访问
+                        </div>
+                        <div class="ui attached segment">
+                            <a href="#" target="_blank" class="index-text-color">哈哈哈</a>
+                        </div>
+                        <div class="ui attached segment">
+                            <a href="#" target="_blank" class="index-text-color">哈哈哈</a>
+                        </div>
+                        <div class="ui attached segment">
+                            <a href="#" target="_blank" class="index-text-color">哈哈哈</a>
+                        </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!--底栏-->
+    <footer th:replace="__fragments :: footer"></footer>
+
+</body>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+
+<script>
+    $('.menu.toggle').click(function () {
+        $('.m-item').toggleClass('index-mobile');
+    });
+</script>
+</html>

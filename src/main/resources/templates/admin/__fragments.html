@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head th:fragment="head">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../../static/lib/editormd/css/editormd.min.css" th:href="@{/lib/editormd/css/editormd.min.css}">
+
+</head>
+<body>
+
+<nav th:fragment="menu(n)" class="ui inverted grey attached segment index-navigation-mini">
+    <div class="ui container">
+        <div class="ui inverted grey secondary stackable menu">
+            <h2 class="ui teal header item">管理</h2>
+            <a href="#" th:href="@{/admin/blogs}" class="nav-item item index-mobile" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>文章</a>
+            <a href="#" th:href="@{/admin/types}" class="nav-item item index-mobile" th:classappend="${n==2} ? 'active'"><i class="th large icon"></i>分类</a>
+            <a href="#" th:href="@{/admin/tags}" class="nav-item item index-mobile" th:classappend="${n==3} ? 'active'"><i class="tags icon"></i>标签</a>
+            <div class="right nav-item index-mobile menu">
+                <div class="ui dropdown item">
+                    <div class="text">
+                        <img src="https://cache.cswsadlab.com/wp-content/uploads/2015/03/笑颜1-150x150.jpg" alt="" class="ui avatar image">DD
+                    </div>
+                    <i class="dropdown icon"></i>
+                    <div class="menu">
+                        <a href="#" class="item" th:href="@{/admin/logout}">注销</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="#" class="ui grey icon menu toggle button index-right-top">
+        <i class="sidebar icon"></i>
+    </a>
+</nav>
+
+
+<footer th:fragment="footer" class="ui inverted grey vertical segment index-footer-big">
+    <div class="ui center aligned container">
+        <div class="ui inverted grey divided stackable grid">
+            <div class="four wide column"></div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header index-text-lined index-text-spaced">联系我</h4>
+                <div class="ui inverteed link list">
+                    <a href="#" class="item index-text-lined index-text-thin index-text-spaced">邮箱：1739716491@qq.com</a>
+                </div>
+            </div>
+
+            <div class="four wide column">
+                <h4 class="ui inverted header index-text-lined index-text-spaced">联系我</h4>
+                <div class="ui inverteed link list">
+                    <a href="#" class="item index-text-lined index-text-thin index-text-spaced">邮箱：1739716491@qq.com</a>
+                </div>
+            </div>
+
+            <div class="four wide column"></div>
+        </div>
+        <br>
+        <div class="ui inverted section divider"></div>
+        <p class="index-text-lined index-text-thin index-text-spaced">Conpyright </p>
+    </div>
+</footer>
+
+</body>
+</html>
