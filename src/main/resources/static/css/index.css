@@ -19,6 +19,12 @@
     right: 0;
 }
 
+.index-text {
+    font-weight: 300 !important;
+    letter-spacing: 1px !important;
+    line-height: 1.8;
+}
+
 .index-text-thin{
     font-weight: 300 !important;
 
@@ -51,9 +57,12 @@
 }
 
 .blog-container{
-    max-width: 60em !important;
+    max-width: 100em !important;
     margin: auto !important;
 }
+
+
+
 .blog-padded{
     padding-left: 3em !important;
     padding-right: 3em !important;

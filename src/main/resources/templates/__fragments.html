@@ -15,10 +15,12 @@
             <a href="#" class="m-item item index-mobile" th:classappend="${n==2} ? 'active'"><i class="th large icon"></i>分类</a>
             <a href="#" class="m-item item index-mobile" th:classappend="${n==3} ? 'active'"><i class="info icon"></i>关于我</a>
             <div class="right m-item item index-mobile">
-                <div class="ui icon input">
-                    <input type="text" placeholder="搜索">
-                    <i class="search link icon"></i>
-                </div>
+                <form action="#"method="post" th:action="@{/search}" target="_blank">
+                    <div class="ui icon input">
+                        <input name="query" type="text" placeholder="搜索" th:value="${query}">
+                        <i class="search link icon"></i>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
