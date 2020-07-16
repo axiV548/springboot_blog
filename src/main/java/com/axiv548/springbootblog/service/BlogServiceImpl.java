@@ -3,6 +3,7 @@ package com.axiv548.springbootblog.service;
 import com.axiv548.springbootblog.NotFoundException;
 import com.axiv548.springbootblog.entity.Blog;
 import com.axiv548.springbootblog.sql.BlogRepository;
+import com.axiv548.springbootblog.util.MarkdownUtil;
 import com.axiv548.springbootblog.util.MyBeanUtils;
 import com.axiv548.springbootblog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
@@ -39,6 +40,24 @@ public class BlogServiceImpl implements BlogService {
     @Override
     public Blog getBlog(Long id) {
         return blogRepository.findById(id).get();
+    }
+
+    @Transactional
+    @Override
+    public Blog getAndConvert(Long id) {
+        Blog blog = blogRepository.findById(id).orElse(null);
+//        System.out.println("我的" + blog);
+        if (blog == null) {
+            throw new NotFoundException("Not Found");
+        }
+        Blog b = new Blog();
+        BeanUtils.copyProperties(blog, b);
+        String content = b.getContent();
+        b.setContent(MarkdownUtil.markdownToHtmlExtensions(content));
+
+        blogRepository.updateViews(id);
+//        System.out.println("我的" + b);
+        return b;
     }
 
     @Override
