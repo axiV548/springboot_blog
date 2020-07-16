@@ -37,7 +37,7 @@ public class CommentServiceImpl implements CommentService {
         Long parentCommentId = comment.getParentComment().getId();
         if (parentCommentId != -1) {
 //            将findOne改写findById(parentCommentId).get()
-            comment.setParentComment(commentRepository.findById(parentCommentId).get());
+            comment.setParentComment(commentRepository.findById(parentCommentId).orElse(null));
         } else {
             comment.setParentComment(null);
         }
