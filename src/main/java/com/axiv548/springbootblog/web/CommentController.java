@@ -47,8 +47,6 @@ public class CommentController {
         if (user != null) {
             comment.setAvatar(user.getAvatar());
             comment.setAdminComment(true);
-//            System.out.println("啥情况"+user.getAvatar());
-//            comment.setNickname(user.getNickname());
         } else {
             comment.setAvatar(avatar);
         }

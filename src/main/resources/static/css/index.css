@@ -70,6 +70,10 @@
     padding-bottom: 2em !important;
 }
 
+.m-black {
+    color: #333 !important;
+}
+
 /*<!--手机端隐藏-->*/
 @media screen and (max-width: 768px){
     .index-mobile{

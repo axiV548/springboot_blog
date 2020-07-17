@@ -120,19 +120,19 @@ public class Comment {
         this.adminComment = adminComment;
     }
 
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "id=" + id +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                ", content='" + content + '\'' +
-                ", avatar='" + avatar + '\'' +
-                ", createTime=" + createTime +
+//    @Override
+//    public String toString() {
+//        return "Comment{" +
+//                "id=" + id +
+//                ", nickname='" + nickname + '\'' +
+//                ", email='" + email + '\'' +
+//                ", content='" + content + '\'' +
+//                ", avatar='" + avatar + '\'' +
+//                ", createTime=" + createTime +
 //                ", blog=" + blog +
 //                ", replyComments=" + replyComments +
-                ", parentComment=" + parentComment +
-                ", adminComment=" + adminComment +
-                '}';
-    }
+//                ", parentComment=" + parentComment +
+//                ", adminComment=" + adminComment +
+//                '}';
+//    }
 }

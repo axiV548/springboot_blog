@@ -73,30 +73,6 @@
                                     <span class="date" th:text="${#dates.format(comment.createTime, 'yyyy-MM-dd HH:mm')}"></span>
                                 </div>
                                 <div class="text" th:text="${comment.content}"></div>
-                                <div class="actions">
-                                    <a class="reply" data-commentid="1" data-commentnickname="Joe" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickname}" onclick="reply(this)">回复</a>
-                                    <br>
-                                </div>
-                            </div>
-                            <div class="comments" th:if="${#arrays.length(comment.replyComments)}>0">
-                                <div class="comment" th:each="reply : ${comment.replyComments}">
-                                    <a class="avatar">
-                                        <img th:src="@{${reply.avatar}}">
-                                    </a>
-                                    <div class="content">
-                                        <a class="author"><span th:text="${reply.nickname}"></span>
-                                            <div class="ui mini basic teal left pointing label" style="padding: 0.2em !important;" th:if="${reply.adminComment}">博主</div>
-                                            &nbsp;<span th:text="|@ ${reply.parentComment.nickname}|" style="color: #333 !important;"></span></a>
-                                        <div class="metadata">
-                                            <span class="date" th:text="${#dates.format(reply.createTime, 'yyyy-MM-dd HH:mm')}"></span>
-                                        </div>
-                                        <div class="text" th:text="${reply.content}"></div>
-                                        <div class="actions">
-                                            <a class="reply" data-commentid="1" data-commentnickname="Joe" th:attr="data-commentid=${reply.id},data-commentnickname=${reply.nickname}" onclick="reply(this)">回复</a>
-                                            <br>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
 
                         </div>

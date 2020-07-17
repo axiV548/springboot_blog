@@ -67,13 +67,13 @@ public class BlogServiceImpl implements BlogService {
             public Predicate toPredicate(Root<Blog> root, CriteriaQuery<?> cq, CriteriaBuilder cb) {
                 List<Predicate> predicates = new ArrayList<>();
                 if (!"".equals(blog.getTitle()) && blog.getTitle() != null){
-                    predicates.add(cb.like(root.<String>get("标题"), "%"+blog.getTitle()+"%"));
+                    predicates.add(cb.like(root.<String>get("title"), "%"+blog.getTitle()+"%"));
                 }
                 if (blog.getTypeId() != null) {
                     predicates.add(cb.equal(root.<String>get("types").get("id"), blog.getTypeId()));
                 }
                 if (blog.isRecommendStatus()) {
-                    predicates.add(cb.equal(root.<Boolean>get("推荐信息"), blog.isRecommendStatus()));
+                    predicates.add(cb.equal(root.<Boolean>get("recommendStatus"), blog.isRecommendStatus()));
                 }
                 cq.where(predicates.toArray(new Predicate[predicates.size()]));
                 return null;
