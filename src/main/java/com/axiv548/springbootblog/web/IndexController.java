@@ -42,9 +42,19 @@ public class IndexController {
 
     @GetMapping("/blog/{id}")
     public String blog(@PathVariable Long id, Model model){
-        model.addAttribute("blog", blogService.getAndConvert(id));
+
+        if (blogService.getBlog(id).isPublicStatus() && blogService.getBlog(id).isReleaseStatus()) {
+            model.addAttribute("blog", blogService.getAndConvert(id));
+        } else {
+            model.addAttribute("blog", "404");
+        }
         return "blog";
     }
 
+//    about
+    @GetMapping("/about")
+    public String about() {
+        return "about";
+    }
 
 }

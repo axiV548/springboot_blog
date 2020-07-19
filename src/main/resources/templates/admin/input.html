@@ -27,7 +27,6 @@
 <div class="index-footer-big">
     <div class="ui container">
         <form id="blog-form" th:object="${blog}" action="#" th:action="@{/admin/blogs}" method="post" class="ui form">
-            <p th:text="${blog}"></p>
             <input type="hidden" name="releaseStatus">
             <input type="hidden" name="id" th:value="*{id}">
             <div class="required field">

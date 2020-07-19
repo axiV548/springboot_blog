@@ -3,7 +3,7 @@
 <head th:replace="__fragments :: head">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>首页</title>
+    <title>types</title>
 </head>
 
 <body>
@@ -23,25 +23,24 @@
         <div class="ui top attached segment">
             <div class="ui middle aligned two column grid">
                 <div class="column">
-                    <h3 class="ui teal header">分类</h3>
+                    <h3 class="ui blue header">分类</h3>
                 </div>
             </div>
         </div>
 
         <div class="ui attached segment">
-            <div class="ui labeled button" th:each="type : ${types}">
-                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic  button" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${type.name}"></a>
-                <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'teal'" th:text="${#arrays.length(type.blogs)}"></div>
+            <div class="ui labeled button" th:each="type : ${types}" style="padding-bottom: 0.5em !important;">
+                <a href="#" th:href="@{/types/{id}(id=${type.id})}" class="ui basic  button" th:classappend="${type.id==activeTypeId} ? 'blue'" th:text="${type.name}"></a>
+                <div class="ui basic left pointing label" th:classappend="${type.id==activeTypeId} ? 'blue'" th:text="${#arrays.length(type.blogs)}"></div>
             </div>
         </div>
-<!--        <h1 th:text="${page.content}"></h1>-->
-        <div class="ui top attached teal segment" style="padding-left: 2.5em !important;">
-<!--            <p th:text="${page.content}"></p>-->
+
+        <div class="ui top attached blue segment" style="padding-left: 2.5em !important;">
             <div class="ui padded vertical segment " th:each="blog : ${page.content}">
                 <div class="ui middle aligned mobile reversed stackable grid" >
                     <div class="eleven wide column">
                         <h3 class="ui header" ><a href="#" th:href="@{/blog/{id}(id=${blog.id})}" target="_blank" class="m-black" th:text="${blog.title}"></a></h3>
-                        <p class="m-text" th:text="|${blog.description}......|">.</p>
+                        <p class="m-text index-text" th:text="|${blog.description}......|">.</p>
                         <div class="ui grid">
                             <div class="eleven wide column">
                                 <div class="ui mini horizontal link list">
@@ -62,7 +61,7 @@
 <!--                                <div th:each="tags : ${blog}"></div>-->
 <!--                                <p th:text="${tags}"></p>-->
 <!--                                <p>我真</p>-->
-<!--                                <a href="#" target="_blank" class="ui teal basic label m-padded-tiny m-text-thin" th:text="${tag}"></a>-->
+<!--                                <a href="#" target="_blank" class="ui blue basic label m-padded-tiny m-text-thin" th:text="${tag}"></a>-->
                             </div>
                         </div>
                     </div>
@@ -81,10 +80,10 @@
         <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
             <div class="ui middle aligned two column grid">
                 <div class="column">
-                    <a href="#" th:href="@{/(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                    <a href="#" th:href="@{/(page=${page.number}-1)}"  th:unless="${page.first}" class="ui mini blue basic button">上一页</a>
                 </div>
                 <div class="right aligned column">
-                    <a href="#" th:href="@{/(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini teal basic button">下一页</a>
+                    <a href="#" th:href="@{/(page=${page.number}+1)}"  th:unless="${page.last}" class="ui mini blue basic button">下一页</a>
                 </div>
             </div>
         </div>
@@ -98,8 +97,6 @@
 <br>
 <br>
 
-<!--底栏-->
-<footer th:replace="__fragments :: footer"></footer>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>

@@ -34,6 +34,7 @@ public class CommentController {
 
     @GetMapping("/comments/{blogId}")
     public String comments(@PathVariable Long blogId, Model model) {
+//        System.out.println(commentService.listCommentByBlogId(blogId));
         model.addAttribute("comments", commentService.listCommentByBlogId(blogId));
         return "blog :: commentList";
     }

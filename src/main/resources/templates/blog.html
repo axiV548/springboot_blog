@@ -12,13 +12,13 @@
 <nav th:replace="__fragments :: menu(1)"></nav>
 
 <!--主页-->
-<div class="blog-container index-footer-big">
+<div class="blog-container index-footer-big index-text" th:if="${blog}!=404">
     <div class="ui container">
 <!--        头部-->
         <div class="ui top attached segment">
             <div class="ui grid">
                 <div class="eleven wide column">
-                    <div class="ui horizontal link list">
+                    <div class="ui horizontal link list" style="text-align: center !important;">
                         <div class="item">
                             <img th:src="@{${blog.user.avatar}}" alt="" class="ui avatar image">
                             <div class="content" th:text="${blog.user.nickname}"></div>
@@ -30,7 +30,7 @@
                     </div>
                 </div>
                 <div class="five wide column">
-                    <a href="#" target="_blank" class="ui teal basic label" th:each="tag : ${blog.tags}" th:text="${tag.name}">标签</a>
+                    <a href="#" target="_blank" class="ui blue basic label left" th:each="tag : ${blog.tags}" th:text="${tag.name}">标签</a>
                 </div>
             </div>
         </div>
@@ -46,16 +46,17 @@
                     <ul class="list">
                         <li>作者：<span th:text="${blog.user.nickname}"></span></li>
                         <li>发布时间：<span th:text="${#dates.format(blog.updateTime,'yyyy-MM-dd HH:mm')}"></span></li>
-                        <li>版权声明：自由转载-非商用-非衍生-保留出处</li>
+                        <li>版权声明：自由转载-非商用-非衍生-保持署名</li>
+                        <li>转载声明：转载请保留原文链接，禁止商用转载</li>
                     </ul>
                 </div>
             </div>
         </div>
 
 
-        <div class="ui bottom attached segment">
+        <div class="ui bottom attached segment" th:if="${blog.commentStatus}">
 <!--            留言-->
-            <div id="comment-container" class="ui teal comments" style="max-width: 100%">
+            <div id="comment-container" class="ui blue comments" style="max-width: 100%">
                 <div th:fragment="commentList">
                     <div class="ui threaded comments">
                         <h3 class="ui dividing header">留言</h3>
@@ -66,7 +67,7 @@
                             <div class="content">
                                 <a class="author">
                                     <span th:text="${comment.nickname}">
-                                        <div class="ui mini basic teal left pointing label" style="padding: 0.2em !important;" th:if="${comment.adminComment}">博主</div>
+                                        <div class="ui mini basic blue left pointing label" style="padding: 0.2em !important;" th:if="${comment.adminComment}">博主</div>
                                     </span>
                                 </a>
                                 <div class="metadata">
@@ -100,7 +101,7 @@
                             </div>
                         </div>
                         <div class="field">
-                            <button id="commentPost-btn" type="button" class="ui teal button"><i class="edit icon"></i></button>
+                            <button id="commentPost-btn" type="button" class="ui blue button"><i class="edit icon"></i></button>
                         </div>
                     </div>
                 </div>
@@ -108,18 +109,16 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <!--上下箭头栏-->
 <div class="index-positon" style="padding: 3em !important;">
     <div class="ui vertical icon buttons">
-        <a href="#" class="ui teal button"><i class="chevron up icon"></i></a>
-        <a href="#comment-container" class="ui teal button"><i class="chevron down icon"></i></a>
+        <a href="#" class="ui blue button"><i class="chevron up icon"></i></a>
+        <a href="#comment-container" class="ui blue button"><i class="chevron down icon"></i></a>
     </div>
 </div>
 
-<!--底栏-->
-<footer th:replace="__fragments :: footer"></footer>
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
@@ -133,24 +132,24 @@
     });
 </script>
 
-<script th:inline="javascript">
+<script th:inline="javascript" th:if="${blog}!=404">
     $('.ui.form').form({
         fields: {
-            title: {
+            content: {
                 identifier: 'content',
                 rules: [{
                     type: 'empty',
                     prompt: '请输入内容',
                 }]
             },
-            content: {
+            nickname: {
                 identifier: 'nickname',
                 rules: [{
                     type: 'empty',
                     prompt: '请输入您的名字',
                 }]
             },
-            title: {
+            email: {
                 identifier: 'email',
                 rules: [{
                     type: 'email',

@@ -29,7 +29,7 @@
             <input type="hidden" name="page">
             <div class="inline fields">
                 <div class="field">
-                    <input type="text" name="title" placeholder="title">
+                    <input type="text" name="title" placeholder="标题">
                 </div>
                 <div class="field">
                     <div class="ui selection dropdown">
@@ -71,12 +71,12 @@
 <!--                    <p th:text="${blog['title']}"></p>-->
 <!--                    <p th:text="${iterStat}"></p>-->
 
-                    <td th:text="${iterStat.count}">1</td>
-                    <td th:text="${blog['title']}">刻意练习清单</td>
-                    <td th:text="${blog.types.name}">认知升级</td>
-                    <td th:text="${blog['recommendStatus']} ? '是':'否'">是</td>
-                    <td th:text="${blog['releaseStatus']} ? '发布':'草稿'">草稿</td>
-                    <td th:text="${blog['updateTime']}">2017-10-02 09:45</td>
+                    <td th:text="${iterStat.count}"></td>
+                    <td th:text="${blog['title']}"></td>
+                    <td th:text="${blog.types.name}"></td>
+                    <td th:text="${blog['recommendStatus']} ? '是':'否'"></td>
+                    <td th:text="${blog['releaseStatus']} ? '发布':'草稿'"></td>
+                    <td th:text="${blog['updateTime']}"></td>
                     <td>
                         <a href="#" th:href="@{/admin/blogs/{id}/input(id=${blog.id})}" class="ui mini teal basic button">编辑</a>
                         <a href="#" th:href="@{/admin/blogs/{id}/delete(id=${blog.id})}" class="ui mini red basic button">删除</a>

@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="../static/lib/prism/prism.css" th:href="@{/lib/prism/prism.css}">
 </head>
 <body>
-<nav th:fragment="menu(n)" class="ui inverted grey attached segment index-navigation-mini">
+<nav th:fragment="menu(n)" class="ui white attached segment index-navigation-mini">
     <div class="ui container">
-        <div class="ui inverted grey secondary stackable menu">
-            <h2 class="ui teal header item">DD</h2>
+        <div class="ui white secondary stackable menu">
+            <h2 class="ui blue header item">DD</h2>
             <a href="#" th:href="@{/}" class="item index-mobile" th:classappend="${n==1} ? 'active'"><i class="home icon"></i>首页</a>
             <a href="#" th:href="@{/types/-1}" class="item index-mobile" th:classappend="${n==2} ? 'active'"><i class="th large icon"></i>分类</a>
-            <a href="#" th:href="@{/about}" class="item index-mobile" th:classappend="${n==3} ? 'active'"><i class="info icon"></i>关于我</a>
+            <a href="#" th:href="@{/about}" class="item index-mobile" th:classappend="${n==3} ? 'active'"><i class="info icon"></i>关于</a>
             <div class="right item index-mobile">
                 <form action="#"method="post" th:action="@{/search}" target="_blank">
                     <div class="ui icon input">
@@ -24,38 +24,21 @@
             </div>
         </div>
     </div>
-    <a href="#" class="ui grey icon menu toggle button index-right-top">
+    <a href="#" class="ui white icon menu toggle button index-right-top">
         <i class="sidebar icon"></i>
     </a>
 </nav>
 
-
-<footer th:fragment="footer" class="ui inverted grey vertical segment index-footer-big">
+<footer th:fragment="footer" class="ui vertical segment index-footer-big">
     <div class="ui center aligned container">
         <div class="ui inverted grey divided stackable grid">
-            <div class="four wide column"></div>
-
-            <div class="four wide column">
-                <h4 class="ui inverted header index-text-lined index-text-spaced">联系我</h4>
-                <div class="ui inverteed link list">
-                    <a href="#" class="item index-text-lined index-text-thin index-text-spaced">邮箱：1739716491@qq.com</a>
-                </div>
-            </div>
-
-            <div class="four wide column">
-                <h4 class="ui inverted header index-text-lined index-text-spaced">联系我</h4>
-                <div class="ui inverteed link list">
-                    <a href="#" class="item index-text-lined index-text-thin index-text-spaced">邮箱：1739716491@qq.com</a>
-                </div>
-            </div>
-
-            <div class="four wide column"></div>
+            <h5 class="ui header index-text-lined index-text-spaced">联系我:1739716491@qq.com</h5>
+            <br>
         </div>
-        <br>
-        <div class="ui inverted section divider"></div>
-        <p class="index-text-lined index-text-thin index-text-spaced">Conpyright </p>
     </div>
+    <p class="index-text-lined index-text-thin index-text-spaced">Copyright ©2020-2020 axiV548</p>
 </footer>
+
 
 </body>
 </html>

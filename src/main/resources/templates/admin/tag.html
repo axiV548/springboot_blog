@@ -55,7 +55,7 @@
                     <a href="#" th:href="@{/admin/tags/input}" class="ui mini floated teal basic button">新增</a>
                     <div class="ui mini right floated pagination menu ">
                         <a th:href="@{/admin/tags(page=${page.number}-1)}" class="item" th:unless="${page.first}">上一页</a>
-                        <a th:href="@{/admin/tags(page=${page.number}-1)}" class="item" th:unless="${page.last}">下一页</a>
+                        <a th:href="@{/admin/tags(page=${page.number}+1)}" class="item" th:unless="${page.last}">下一页</a>
                     </div>
                 </th>
             </tr>

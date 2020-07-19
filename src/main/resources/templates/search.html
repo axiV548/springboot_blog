@@ -18,7 +18,7 @@
         <div class="ui top attached segment">
             <div class="ui middle aligned two column grid">
                 <div class="column">
-                    <h3 class="ui teal header">搜索结果</h3>
+                    <h3 class="ui blue header">搜索结果</h3>
                 </div>
                 <div class="right aligned column">
                     <h2 class="ui orange header" th:text="${page.totalElements}"></h2>
@@ -27,11 +27,11 @@
         </div>
 
 
-        <div class="ui top attached teal segment">
+        <div class="ui top attached blue segment">
             <div class="ui top attached segment">
                 <div class="ui middle aligned two column grid">
                     <div class="column">
-                        <h3 class="ui teal header">文章</h3>
+                        <h3 class="ui blue header">文章</h3>
                     </div>
                 </div>
             </div>
@@ -64,7 +64,7 @@
                                     </div>
                                 </div>
                                 <div class="five wide column">
-                                    <a href="#" target="_blank" class="ui teal basic label" th:text="${blog.types.name}">标签</a>
+                                    <a href="#" target="_blank" class="ui blue basic label" th:text="${blog.types.name}">标签</a>
                                 </div>
                             </div>
                         </div>
@@ -76,10 +76,10 @@
             <div class="ui bottom attached segment" th:if="${page.totalPages}>1">
                 <div class="ui middle aligned two column grid">
                     <div class="column">
-                        <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini teal basic button">上一页</a>
+                        <a href="#" th:href="@{/(page=${page.number}-1)}" th:unless="${page.first}" class="ui mini blue basic button">上一页</a>
                     </div>
                     <div class="right aligned column">
-                        <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.first}" class="ui mini teal basic button">下一页</a>
+                        <a href="#" th:href="@{/(page=${page.number}+1)}" th:unless="${page.first}" class="ui mini blue basic button">下一页</a>
                     </div>
                 </div>
             </div>
@@ -88,8 +88,7 @@
 </div>
 <br>
 <br>
-<!--底栏-->
-<footer th:replace="__fragments :: footer"></footer>
+
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/semantic-ui/2.2.4/semantic.min.js"></script>
